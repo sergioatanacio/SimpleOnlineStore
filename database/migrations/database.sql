@@ -1,0 +1,26 @@
+DROP DATABASE IF EXISTS online_store;
+
+CREATE DATABASE IF NOT EXISTS online_store;
+show databases;
+USE online_store;
+
+SHOW TABLES;
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    id_user INTEGER UNSIGNED NOT NULL,
+    nombre VARCHAR(50) NOT NULL DEFAULT 'desconocido',
+    email VARCHAR(50) NOT NULL UNIQUE,
+    password_users VARCHAR(50) NOT NULL,
+    enable_disable INTEGER(2) NOT NULL DEFAULT 1
+);
+CREATE TABLE IF NOT EXISTS products (
+    id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    id_products INTEGER UNSIGNED NOT NULL,
+    id_user INTEGER UNSIGNED NOT NULL,
+    id_mazo INTEGER UNSIGNED NOT NULL,
+    nombre_products VARCHAR(100) NOT NULL,
+    cantidad_products INTEGER UNSIGNED NOT NULL,
+    precio_products INTEGER UNSIGNED NOT NULL,
+    description_products TEXT,
+    enable_disable INTEGER(2) NOT NULL DEFAULT 1
+);

@@ -1,0 +1,37 @@
+//
+/* 
+justify-content-md-center
+align-items-center 
+text-center
+ */
+/* 
+Algúnos colores
+#28558F
+#2D7375
+#A87351
+ */
+
+body {
+    background: #b6a570;
+    /* background: #a6f2f5; */
+    /* background: #9ed56b; */
+    /* background: #acdafd; */
+    }
+.blue-text form input, .blue-text-button {
+    font-weight: bold;
+    color: #28558F;
+}
+
+h1, h2 {
+    color: #2D7375;
+}
+
+.note-byProductName {
+    border: 3px solid white;
+    border-radius: 1rem;
+}
+
+.fontSizeInEditor {
+    font-size: 20px;
+}
+
