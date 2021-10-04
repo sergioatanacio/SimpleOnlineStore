@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\RequestResponse;
+namespace App\RequestResponse;
 
 class Request
 {
@@ -17,9 +17,9 @@ class Request
         array $petitionRoute, 
         object $connectionDbRoute)
     {
-        $this->controller = $controllerRoute;
-        $this->method = $methodRoute;
-        $this->petition = $petitionRoute;
+        $this->controller   = $controllerRoute;
+        $this->method       = $methodRoute;
+        $this->petition     = $petitionRoute;
         $this->connectionDb = $connectionDbRoute;
 
         return $this;

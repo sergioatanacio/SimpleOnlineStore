@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Http\RequestResponse\Response;
+use App\RequestResponse\Response;
 
 trait Controller
 {
