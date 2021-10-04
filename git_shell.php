@@ -2,8 +2,7 @@
 $branch = $argv[1] ?? 'main';
 #$message = $argv[1] ?? '';
 
-#$comand = "git add . && git commit && git push origin ". $branch;
-shell_exec("vim .");
+#$comand = "git add . && git commit && git push origin ". $branch;  
 
 shell_exec("git add .");
 $message = readline() ?? 'Pequeños cambios';
