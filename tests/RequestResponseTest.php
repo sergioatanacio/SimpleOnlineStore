@@ -12,11 +12,11 @@ class RequestResponseTest extends TestCase
 {
     public function test_request_response()
     {
-        $request = new Request();
-        $request->setInstance('UserController', 'login', null, null);
+        # $request = new Request();
+        # $request->setInstance('UserController', 'login', null, null);
+        $route = Route::get('', 'UserController@login', null, '/', [], null);
 
-        
-
+        var_dump($route);
 
         /* 
         $rutaInicial = Route::get('', 'UserController@login', null, "/", [], null);

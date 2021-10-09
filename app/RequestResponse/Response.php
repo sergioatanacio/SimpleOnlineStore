@@ -1,8 +1,9 @@
 <?php
 
 namespace App\RequestResponse;
+use App\Contracts\RequestResponse\ResponseContract;
 
-class Response
+class Response implements ResponseContract
 {
     protected $view, $model;
 

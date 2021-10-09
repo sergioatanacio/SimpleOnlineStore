@@ -51,6 +51,7 @@ class Route
             }
         };
         echo $request();
+        return $request();
     }
 }
 

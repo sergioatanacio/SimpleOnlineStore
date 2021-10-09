@@ -10,17 +10,17 @@ class UserController implements UserControllerContract
 {
     use Controller;
 
-    public function login()
+    public function login(): ResponseContract
     {
         return $this->view('userSystem/loginView');
     }
     
-    public function createAccount()
+    public function createAccount(): ResponseContract
     {
         return $this->view('userSystem/createAccountView');
     }
     
-    public function logInProcess()
+    public function logInProcess(): ResponseContract
     {
         $user = UserModel::loginUser(
             $this->connectionDb, 
@@ -41,7 +41,7 @@ class UserController implements UserControllerContract
         }
     }
     
-    public function createAccountProcess()
+    public function createAccountProcess(): ResponseContract
     {
         $createAccountProcess = UserModel::createAccountProcess($this->connectionDb, $this->petition["name"], $this->petition["email"], $this->petition["password"]);
         $createAccount = function() use ($createAccountProcess)
