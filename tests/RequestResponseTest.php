@@ -7,9 +7,9 @@ use PHPUnit\Framework\TestCase;
  * $ vendor/phpunit/phpunit/phpunit
  */
 
-class UserControllerTest extends TestCase
+class RequestResponseTest extends TestCase
 {
-    public function test_object_user_controller()
+    public function test_request_response()
     {
         
         /* 
