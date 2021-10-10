@@ -16,6 +16,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
+            "AppTest\\": "app_test/",
             "Routes\\": "routes/"
         },
         "files": [

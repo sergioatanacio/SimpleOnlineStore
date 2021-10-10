@@ -1,5 +1,5 @@
 <?php
-namespace App\Contracts\RequestResponse;
+namespace AppTest\Contracts\RequestResponse;
 
 interface RequestContract
 {

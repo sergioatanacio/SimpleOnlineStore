@@ -1,7 +1,7 @@
 <?php
-namespace App\Contracts\User;
+namespace AppTest\Contracts\User;
 
-use App\Contracts\RouteHelpers\ResponseContract;
+use AppTest\Contracts\RouteHelpers\ResponseContract;
 
 interface ProductCategoryContract
 {

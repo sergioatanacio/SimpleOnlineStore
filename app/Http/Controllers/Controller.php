@@ -28,8 +28,7 @@ trait Controller
     public function model($modelRun, $petition)
     {
         $modelClass = "App\Models\\{$modelRun}";
-        $modelClassRun = new $modelClass($this->connectionDb, $petition);
-        return $modelClassRun;
+        return new $modelClass($this->connectionDb, $petition);
     }
 }
 

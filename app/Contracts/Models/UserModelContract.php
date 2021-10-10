@@ -1,9 +1,9 @@
 <?php
-namespace App\Contracts\User;
+namespace App\Contracts\Models;
 
-use App\Contracts\RouteHelpers\ResponseContract;
+use App\Contracts\RequestResponse\ResponseContract;
 
-interface UserContract
+interface UserModelContract
 {
 
     public function login(): ResponseContract;

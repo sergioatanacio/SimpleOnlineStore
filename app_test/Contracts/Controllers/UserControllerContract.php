@@ -1,7 +1,7 @@
 <?php
-namespace App\Contracts\Controllers;
+namespace AppTest\Contracts\Controllers;
 
-use App\Contracts\RequestResponse\ResponseContract;
+use AppTest\Contracts\RequestResponse\ResponseContract;
 
 interface UserControllerContract
 {

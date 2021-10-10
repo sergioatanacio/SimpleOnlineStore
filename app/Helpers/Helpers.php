@@ -1,5 +1,6 @@
 <?php
-use App\Http\RequestResponse\Response;
+
+use App\RequestResponse\Response;
 
 
 if(! function_exists('domain')) 

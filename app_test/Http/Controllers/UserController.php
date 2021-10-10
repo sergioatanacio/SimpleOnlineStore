@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace AppTest\Http\Controllers;
 
 use App\Contracts\Controllers\UserControllerContract;
 use App\Models\UserModel;
@@ -14,17 +14,17 @@ class UserController implements UserControllerContract
     {
         return $this->view('userSystem/loginView');
     }
-    
+
     public function createAccount()
     {
         return $this->view('userSystem/createAccountView');
     }
-    
+
     public function logInProcess()
     {
         $user = UserModel::loginUser(
-            $this->connectionDb, 
-            $this->petition['email_users'], 
+            $this->connectionDb,
+            $this->petition['email_users'],
             $this->petition['password_users']
         );
 
@@ -33,14 +33,14 @@ class UserController implements UserControllerContract
             session_start();
             $_SESSION['id_user'] = $user->id_user;
             sessionStarted();
-            
+
             header("Location:" . domain("read"));
         } else {
             sessionEnded();
             activeSession();
         }
     }
-    
+
     public function createAccountProcess()
     {
         $createAccountProcess = UserModel::createAccountProcess($this->connectionDb, $this->petition["name"], $this->petition["email"], $this->petition["password"]);

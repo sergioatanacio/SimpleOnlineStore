@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace AppTest\Http\Controllers;
 
 
-use App\RequestResponse\Response;
+use AppTest\RequestResponse\Response;
 
 trait Controller
 {

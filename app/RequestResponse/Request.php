@@ -4,10 +4,10 @@ namespace App\RequestResponse;
 
 class Request
 {
-    protected $controller;
-    protected $method;
-    protected $petition;
-    protected $connectionDb;
+    protected string $controller;
+    protected string $method;
+    protected array $petition;
+    protected object $connectionDb;
 
     public function __construct(){}
 
@@ -15,7 +15,7 @@ class Request
         string $controllerRoute, 
         string $methodRoute, 
         array $petitionRoute, 
-        object $connectionDbRoute)
+        object $connectionDbRoute): self
     {
         $this->controller   = $controllerRoute;
         $this->method       = $methodRoute;
@@ -25,14 +25,14 @@ class Request
         return $this;
     }
     
-    public function getController()
+    public function getController(): string
     {
         $controller = $this->controller;
 
         return "App\Http\Controllers\\{$controller}";
     }
     
-    public function getMethod()
+    public function getMethod(): string
     {
         return $this->method;
     }

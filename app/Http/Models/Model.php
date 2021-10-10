@@ -1,5 +1,5 @@
 <?php
-namespace App\Models;
+namespace App\Http\Models;
 use App\Helpers\GlobalVariables;
 
 trait Model

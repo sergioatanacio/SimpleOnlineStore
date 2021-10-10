@@ -1,5 +1,5 @@
 <?php
-namespace App\Contracts\Models;
+namespace AppTest\Contracts\Models;
 
 interface ContractModel
 {
