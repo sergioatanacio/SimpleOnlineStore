@@ -1,5 +1,7 @@
 <?php
-namespace App\Helpers;
+#namespace App\Helpers;
+
+use App\RequestResponse\Request;
 
 class Route
 {
@@ -8,7 +10,7 @@ class Route
     private static $petition;
     private static $connect;
 
-    private static function Connect()
+    public static function Connect()
     {
         try {
             $connection = new \PDO("mysql:host=".db_host."; dbname=".db_nombre, db_usuario, db_pasword);
@@ -42,7 +44,8 @@ class Route
         {
             if ($route() == $escapingGet())
             {
-                return self::$requestObject->setInstance(
+                return self::$requestObject->setInstance
+                (
                     $routePath['controllerRoute'],
                     $routePath['methodRoute'],
                     self::$petition,
@@ -50,7 +53,10 @@ class Route
                 )->send();
             }
         };
-        echo $request();
+        if(test_phpunit !== true)
+        {
+            echo $request();
+        }
         return $request();
     }
 }

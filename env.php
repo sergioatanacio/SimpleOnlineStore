@@ -3,16 +3,22 @@
 /**
  * Dominio
  */
-define('domain', 'http://localhost:8000/');
+const domain = 'http://localhost:8000/';
 
 
 /**
  * Conexion a la base de datos
  */
-define('db_host', 'localhost');
-define('db_usuario', 'root');
-define('db_pasword', '');
-define('db_nombre', 'online_store');
+const db_host = 'localhost';
+const db_usuario = 'root';
+const db_pasword = '';
+const db_nombre = 'online_store';
+
+/**
+ * Config
+ * test_phpunit = true or false
+ */
+const test_phpunit = true;
 
 
 

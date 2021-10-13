@@ -1,7 +1,7 @@
 <?php
 use App\RequestResponse\Request;
 
-class Route
+class RouteTest
 {
     private static $requestObject;
     private static $request_uri;
@@ -42,7 +42,8 @@ class Route
         {
             if ($route() == $escapingGet())
             {
-                return self::$requestObject->setInstance(
+                return self::$requestObject->setInstance
+                (
                     $routePath['controllerRoute'],
                     $routePath['methodRoute'],
                     self::$petition,

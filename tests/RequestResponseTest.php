@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
  * $ vendor/phpunit/phpunit/phpunit
  */
 Use App\RequestResponse\Request;
+#use App\Helpers\Route;
 
 class RequestResponseTest extends TestCase
 {
@@ -19,20 +20,41 @@ class RequestResponseTest extends TestCase
          * es request.
          *
          * Las clases son creadas por traits y por interfaces.
+         *
+         * Lo primero que vamos a testear es que la conexión se hay realizado y que por tanto el método estático
+         * retorne un objeto PDO.
          */
 
+        $routeConnect = fn(PDO $connect) => $connect;
+        $this->assertTrue
+        (
+            is_object
+            (
+                $routeConnect
+                (
+                    Route::Connect()
+                )
+            )
+        );
+
+        /**
+         * El método get es para ejecutar el código del controlador y de la vista. Debe retornar un método
+         * request, he incluso un método response.
+         */
         # $request = new Request();
         # $request->setInstance('UserController', 'login', null, null);
         #$route = Route::get('', 'UserController@login', null, '/', [], null);
 
-        #var_dump($route);
-        $this->assertTrue(true);
+        #Route::get($route, $controller, $requestObject = null, $request_uri = null, $petition = null, $connect = null)
+        #$this->assertTrue(true);
 
-        /*
+        #$rutaInicial = Route::get('', 'UserController@login', null, "/", [], null);
+        #$this->assertTrue(is_string($rutaInicial));
+
+
         $rutaInicial = Route::get('', 'UserController@login', null, "/", [], null);
-
         $this->assertTrue(is_string($rutaInicial));
-         */
+
     }
     public function test_request_response()
     {
