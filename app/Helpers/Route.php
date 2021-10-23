@@ -2,15 +2,17 @@
 #namespace App\Helpers;
 
 use App\RequestResponse\Request;
+use App\Contracts\Helpers\RouteContract;
+use App\Contracts\Controller\ControllerContract;
 
-class Route
+class Route implements RouteContract
 {
     private static $requestObject;
     private static $request_uri;
     private static $petition;
     private static $connect;
 
-    public static function Connect()
+    public static function Connect(): \PDO
     {
         try {
             $connection = new \PDO("mysql:host=".db_host."; dbname=".db_nombre, db_usuario, db_pasword);
@@ -23,7 +25,7 @@ class Route
         }
     }
 
-    public static function get($route, $controller, $requestObject = null, $request_uri = null, $petition = null, $connect = null)
+    public static function get($route, $controller, $requestObject = null, $request_uri = null, $petition = null, $connect = null): ControllerContract
     {
         self::$requestObject    = $requestObject ?? new Request();
         self::$request_uri      = $request_uri ?? $_SERVER['REQUEST_URI'];

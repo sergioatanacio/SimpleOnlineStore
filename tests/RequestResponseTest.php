@@ -6,8 +6,10 @@ use PHPUnit\Framework\TestCase;
  * $ composer dump
  * $ vendor/phpunit/phpunit/phpunit
  */
-Use App\RequestResponse\Request;
+#Use App\RequestResponse\Request;
 #use App\Helpers\Route;
+use App\Contracts\Helpers\RouteContract;
+
 
 class RequestResponseTest extends TestCase
 {
@@ -37,6 +39,8 @@ class RequestResponseTest extends TestCase
             )
         );
 
+        #$RouteImplementController = fn(ControllerContract $route) => $route;
+        #$this->assertTrue(is_object($RouteImplementController(new Route())));
         /**
          * El método get es para ejecutar el código del controlador y de la vista. Debe retornar un método
          * request, he incluso un método response.
@@ -52,7 +56,16 @@ class RequestResponseTest extends TestCase
         #$this->assertTrue(is_string($rutaInicial));
 
 
-        $rutaInicial = Route::get('', 'UserController@login', null, "/", [], null);
+        $rutaInicial = Route::get
+        (
+            '',
+            'UserController@login',
+            null,
+            "/",
+            [],
+            null
+        );
+
         $this->assertTrue(is_string($rutaInicial));
 
     }

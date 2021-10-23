@@ -16,8 +16,8 @@ trait Controller
         $this->responseObject   = $responseObject ?? new Response();
     }
 
-    public function view(string $viewOfView, $model = null) {
-
+    public function view(string $viewOfView, $model = null) 
+    {
         $viewReturn = [
             "view"      => $viewOfView,
             "model"     => $model,

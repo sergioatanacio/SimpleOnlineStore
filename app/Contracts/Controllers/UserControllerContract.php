@@ -3,7 +3,7 @@ namespace App\Contracts\Controllers;
 
 use App\Contracts\RequestResponse\ResponseContract;
 
-interface UserControllerContract
+interface UserControllerContract extends ControllerContract
 {
     public function login(): ResponseContract;
 
